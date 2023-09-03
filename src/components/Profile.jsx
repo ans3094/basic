@@ -1,9 +1,13 @@
 import React from 'react';
+import Avatar from './Avatar';
 
-export default function Profile() {
+export default function Profile({image, name, title, isNew}) {
     return (
-        <div>
-            <p>안녕하세요. 저는 문정원입니다.</p>
+        <div className='profile'>
+           <Avatar image={image}/>
+            <h1>{name}</h1>
+            <p>{title}</p>
+            { isNew &&  <span className='new'>NEW</span>}
         </div>
     );
 }
